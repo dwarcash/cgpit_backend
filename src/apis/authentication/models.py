@@ -33,7 +33,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    
+
     username = None
     enroll_no = models.CharField(max_length=15, unique=True, db_index=True)
     email = models.EmailField(max_length=255, unique=True, db_index=True)

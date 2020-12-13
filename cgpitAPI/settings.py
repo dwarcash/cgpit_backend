@@ -110,18 +110,16 @@ REST_FRAMEWORK = {
 # }
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "djongo",
-        'ENFORCE_SCHEMA': False,
-        "CLIENT": {
-            "host": env('DB_HOST'),
-            "username": env('DB_USER'),
-            "password": env('DB_PASSWORD'),
-            "name": env('DB_NAME'),
-            "authMechanism": "SCRAM-SHA-1",
-        },
-    }}
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':env('DB_NAME'),
+      'USER':env('DB_USER'),
+      'PASSWORD':env('DB_PASSWORD'),
+      'HOST':env('DB_HOST'),
+      'PORT':env('DB_PORT'),
+   }
+}
 
 
 # Password validation

@@ -4,6 +4,7 @@ from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
 
 
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
         max_length=64, min_length=6, write_only=True)
@@ -14,9 +15,10 @@ class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['enroll_no', 'email', 'password']
+   
 
     def validate(self, attrs):
-        enroll_no = attrs.get('enroll_no', '')
+        # enroll_no = attrs.get('enroll_no', '')
         email = attrs.get('email', '')
         return attrs
 
